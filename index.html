@@ -300,14 +300,14 @@
     <div class="anim-wrap" id="q5-video-slot"></div>
     <h1>规则</h1>
     <p class="q-text" style="text-align:left;padding:0 2px;font-size:12.5px;line-height:1.65;">
-      1. 盯着动画，边点边沉沦<br>
-      2. 想射随时可以<br>
-      3. 支付有时限，超时惩罚<br>
-      4. 寸止只有短暂喘息<br>
-      5. 30%概率暴击（金额×2）<br>
-      6. 擅自射精绝对禁止
+      1. 请紧紧盯着屏幕，边点边🦌叭～🖤<br>
+      2. 不允许分心哦～🖤<br>
+      3. 支付有时限，超时惩罚哦～🖤<br>
+      4. 寸止只有短暂喘息呢～🖤<br>
+      5. 每个按钮都有30%的概率暴击哦～🖤<br>
+      6. 擅自射精是绝对禁止的哦～🖤
     </p>
-    <p class="small-tip">从现在起，你已经没有退路。</p>
+    <p class="small-tip">从现在起，你已经是小妲的猎物了。</p>
     <button class="start-btn" onclick="showMode()">选择模式</button>
   </div>
 
@@ -333,7 +333,7 @@
     <div class="anim-wrap"><canvas id="game-canvas" class="game-canvas"></canvas></div>
     <p style="text-align:center;font-size:11.5px;color:#e9d5ff;">当前贡金 <span id="mode-tag"></span></p>
     <div class="amount" id="amount">0.00</div>
-    <div class="min-tip">已解除最低限制，随时可射</div>
+    <div class="min-tip">请用力发泄叭～🖤</div>
     <div class="stats-row">
       <span>🦌 <b id="fap-count">0</b></span>
       <span>死妈/爸 <b id="toggle-count">0</b></span>
@@ -347,7 +347,7 @@
 
   <div id="choice-screen" class="card" style="display:none;">
     <h2>现在要？</h2>
-    <p class="small-tip">只有付钱的废物才被允许射精</p>
+    <p class="small-tip">上贡之后才会被允许射哦～🖤精</p>
     <button class="cum" onclick="choosePay()">支付射精</button>
     <button class="fap" onclick="chooseEdge()">选择寸止</button>
   </div>
@@ -365,7 +365,7 @@
 
   <div id="payment-screen" class="card" style="display:none;">
     <h2>支付倒计时</h2>
-    <p class="small-tip">不交钱就继续憋着吧</p>
+    <p class="small-tip">不上贡就只能继续憋着咯～🖤</p>
     <div class="progress-container"><div id="pay-progress-bar" class="progress-bar"></div></div>
     <p id="pay-progress-text" style="text-align:center;color:#e9d5ff;font-size:12px;">30 秒</p>
     <p style="text-align:center;margin:6px 0;color:#f9a8d4;font-size:13px;">当前贡金：<span id="pay-amount">0</span> 元</p>
@@ -379,19 +379,19 @@
   <div id="checking-screen" class="card" style="display:none;">
     <h2>正在确认转账</h2>
     <p class="checking" id="checking-text">核对中...</p>
-    <p class="small-tip">祖宗正在检查你的诚意</p>
+    <p class="small-tip">小妲正在检查你的诚意</p>
   </div>
 
   <div id="countdown-screen" class="card" style="display:none;">
     <h2>射精倒计时</h2>
-    <p class="countdown-hint" id="countdown-hint">盯着……马上就可以了</p>
+    <p class="countdown-hint" id="countdown-hint">盯着……马上就可以了～🖤</p>
     <div class="anim-wrap"><canvas id="countdown-canvas" class="cum-canvas"></canvas></div>
     <div class="countdown" id="big-countdown">10</div>
   </div>
 
   <div id="result-screen" class="card" style="display:none;">
     <div class="anim-wrap"><canvas id="result-canvas"></canvas></div>
-    <h1 id="result-title">射精成功</h1>
+    <h1 id="result-title">💦💦💦</h1>
     <div class="final-stats">
       <div>本次贡金：<strong id="result-amount">0.00</strong> 元</div>
       <div>🦌：<strong id="result-fap">0</strong> · 死妈/爸：<strong id="result-toggle">0</strong> · 全家升天：<strong id="result-family">0</strong></div>
@@ -646,8 +646,8 @@ function startDanmaku(list) {
   danmakuT = setInterval(spawn, 1900);
 }
 
-const gameDM = ["再多给一点","眼睛移不开了吧","继续点，继续沉沦","不给钱就一直憋着"];
-const payDM = ["不交钱就想射？","快点转账","只有付钱的废物才能射"];
+const gameDM = ["再多给一点","眼睛移不开了吧","加油哦～","不给钱就一直憋着叭"];
+const payDM = ["不交钱就想射？","快点转账","只有上贡才能射呢～"];
 const edgeDM = ["坚持住","不能射很难受吧","好好憋着"];
 
 function showQ1() {
@@ -830,7 +830,7 @@ function startPayProgress() {
 function startPaymentCheck() {
   clearDanmaku(); clearInterval(timer);
   hideAll(); document.getElementById('checking-screen').style.display = 'block';
-  const texts = ['核对中...','正在确认转账金额...','祖宗正在检查诚意...','确认通过'];
+  const texts = ['核对中...','正在确认转账金额...','小妲正在检查诚意...','确认通过'];
   let i = 0;
   const el = document.getElementById('checking-text');
   const ct = setInterval(() => {
@@ -862,11 +862,11 @@ function startCountdown() {
       stopLoop('countdown-canvas');
       hideAll(); document.getElementById('result-screen').style.display = 'block';
       startLoop('result-canvas', 'sit', 2.0);
-      let title = '射精成功', comment = '还算有点诚意';
-      if (amount < 15) { title = '勉强射出来了'; comment = '才这点钱就想射？下次多给点'; }
-      else if (amount < 40) { title = '射精成功'; comment = '继续加油上贡'; }
-      else if (amount < 80) { title = '被好好清空了'; comment = '不错的废物，祖宗有点满意'; }
-      else { title = '彻底被榨干'; comment = '好孩子，这次上贡很足'; }
+      let title = '💦💦💦', comment = '还算有点诚意';
+      if (amount < 15) { title = '💦💦💦'; comment = '才这点钱就想射？下次多给点'; }
+      else if (amount < 40) { title = '💦💦💦'; comment = '继续加油上贡'; }
+      else if (amount < 80) { title = '被好好清空了'; comment = '不错哦，小妲有点满意'; }
+      else { title = '彻底被榨干'; comment = '好孩子，这次上贡小妲很满意'; }
       document.getElementById('result-title').textContent = title;
       document.getElementById('result-comment').textContent = comment;
       document.getElementById('result-amount').textContent = amount.toFixed(2);
